@@ -7,10 +7,11 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> January, 2020</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> January, 2020</small>
+</sub>
+
 </div>
 
 [<< Day 7](../07_Day_Functions/07_day_functions.md) | [Day 9 >>](../09_Day_Higher_order_functions/09_day_higher_order_functions.md)
@@ -18,25 +19,25 @@
 ![Thirty Days Of JavaScript](../images/banners/day_1_8.png)
 
 - [📔 Day 8](#-day-8)
-	- [Scope](#scope)
-		- [Window Global Object](#window-global-object)
-		- [Global scope](#global-scope)
-		- [Local scope](#local-scope)
-	- [📔 Object](#-object)
-		- [Creating an empty object](#creating-an-empty-object)
-		- [Creating an objecting with values](#creating-an-objecting-with-values)
-		- [Getting values from an object](#getting-values-from-an-object)
-		- [Creating object methods](#creating-object-methods)
-		- [Setting new key for an object](#setting-new-key-for-an-object)
-		- [Object Methods](#object-methods)
-			- [Getting object keys using Object.keys()](#getting-object-keys-using-objectkeys)
-			- [Getting object values using Object.values()](#getting-object-values-using-objectvalues)
-			- [Getting object keys and values using Object.entries()](#getting-object-keys-and-values-using-objectentries)
-			- [Checking properties using hasOwnProperty()](#checking-properties-using-hasownproperty)
-	- [💻 Exercises](#-exercises)
-		- [Exercises: Level 1](#exercises-level-1)
-		- [Exercises: Level 2](#exercises-level-2)
-		- [Exercises: Level 3](#exercises-level-3)
+  - [Scope](#scope)
+    - [Window Global Object](#window-global-object)
+    - [Global scope](#global-scope)
+    - [Local scope](#local-scope)
+  - [📔 Object](#-object)
+    - [Creating an empty object](#creating-an-empty-object)
+    - [Creating an objecting with values](#creating-an-objecting-with-values)
+    - [Getting values from an object](#getting-values-from-an-object)
+    - [Creating object methods](#creating-object-methods)
+    - [Setting new key for an object](#setting-new-key-for-an-object)
+    - [Object Methods](#object-methods)
+      - [Getting object keys using Object.keys()](#getting-object-keys-using-objectkeys)
+      - [Getting object values using Object.values()](#getting-object-values-using-objectvalues)
+      - [Getting object keys and values using Object.entries()](#getting-object-keys-and-values-using-objectentries)
+      - [Checking properties using hasOwnProperty()](#checking-properties-using-hasownproperty)
+  - [💻 Exercises](#-exercises)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # 📔 Day 8
 
@@ -48,7 +49,7 @@ Variables scopes can be:
 - Global
 - Local
 
-Variable can be declared globally or locally  scope. We will see both global and local scope.
+Variable can be declared globally or locally scope. We will see both global and local scope.
 Anything declared without let, var or const is scoped at global level.
 
 Let us imagine that we have a scope.js file.
@@ -59,15 +60,15 @@ Without using console.log() open your browser and check, you will see the value 
 
 ```js
 //scope.js
-a = 'JavaScript' // declaring a variable without let or const make it available in window object and this found anywhere
-b = 10 // this is a global scope variable and found in the window object
+a = "JavaScript"; // declaring a variable without let or const make it available in window object and this found anywhere
+b = 10; // this is a global scope variable and found in the window object
 function letsLearnScope() {
-  console.log(a, b)
+  console.log(a, b);
   if (true) {
-    console.log(a, b)
+    console.log(a, b);
   }
 }
-console.log(a, b) // accessible
+console.log(a, b); // accessible
 ```
 
 ### Global scope
@@ -76,19 +77,19 @@ A globally declared variable can be accessed every where in the same file. But t
 
 ```js
 //scope.js
-let a = 'JavaScript' // is a global scope it will be found anywhere in this file
-let b = 10 // is a global scope it will be found anywhere in this file
+let a = "JavaScript"; // is a global scope it will be found anywhere in this file
+let b = 10; // is a global scope it will be found anywhere in this file
 function letsLearnScope() {
-  console.log(a, b) // JavaScript 10, accessible
+  console.log(a, b); // JavaScript 10, accessible
   if (true) {
-    let a = 'Python'
-    let b = 100
-    console.log(a, b) // Python 100
+    let a = "Python";
+    let b = 100;
+    console.log(a, b); // Python 100
   }
-  console.log(a, b)
+  console.log(a, b);
 }
-letsLearnScope()
-console.log(a, b) // JavaScript 10, accessible
+letsLearnScope();
+console.log(a, b); // JavaScript 10, accessible
 ```
 
 ### Local scope
@@ -100,80 +101,76 @@ A variable declared as local can be accessed only in certain block code.
 
 ```js
 //scope.js
-let a = 'JavaScript' // is a global scope it will be found anywhere in this file
-let b = 10 // is a global scope it will be found anywhere in this file
+let a = "JavaScript"; // is a global scope it will be found anywhere in this file
+let b = 10; // is a global scope it will be found anywhere in this file
 // Function scope
 function letsLearnScope() {
-  console.log(a, b) // JavaScript 10, accessible
-  let value = false
-// block scope
+  console.log(a, b); // JavaScript 10, accessible
+  let value = false;
+  // block scope
   if (true) {
-    // we can access from the function and outside the function but 
+    // we can access from the function and outside the function but
     // variables declared inside the if will not be accessed outside the if block
-    let a = 'Python'
-    let b = 20
-    let c = 30
-    let d = 40
-    value = !value
-    console.log(a, b, c, value) // Python 20 30 true
+    let a = "Python";
+    let b = 20;
+    let c = 30;
+    let d = 40;
+    value = !value;
+    console.log(a, b, c, value); // Python 20 30 true
   }
   // we can not access c because c's scope is only the if block
-  console.log(a, b, value) // JavaScript 10 true
+  console.log(a, b, value); // JavaScript 10 true
 }
-letsLearnScope()
-console.log(a, b) // JavaScript 10, accessible
+letsLearnScope();
+console.log(a, b); // JavaScript 10, accessible
 ```
 
-Now, you have an understanding of scope. A variable declared with *var* only scoped to function but variable declared with *let* or *const* is block scope(function block, if block, loop block, etc). Block in JavaScript is a code in between two curly brackets ({}).
+Now, you have an understanding of scope. A variable declared with _var_ only scoped to function but variable declared with _let_ or _const_ is block scope(function block, if block, loop block, etc). Block in JavaScript is a code in between two curly brackets ({}).
 
 ```js
 //scope.js
 function letsLearnScope() {
-  var gravity = 9.81
-  console.log(gravity)
-
+  var gravity = 9.81;
+  console.log(gravity);
 }
 // console.log(gravity), Uncaught ReferenceError: gravity is not defined
 
-if (true){
-  var gravity = 9.81
-  console.log(gravity) // 9.81
+if (true) {
+  var gravity = 9.81;
+  console.log(gravity); // 9.81
 }
-console.log(gravity)  // 9.81
+console.log(gravity); // 9.81
 
-for(var i = 0; i < 3; i++){
-  console.log(i) // 0, 1, 2
+for (var i = 0; i < 3; i++) {
+  console.log(i); // 0, 1, 2
 }
-console.log(i) // 3
-
+console.log(i); // 3
 ```
 
-In ES6 and above there is *let* and *const*, so you will not suffer from the sneakiness of *var*. When we use *let* our variable is block scoped and it will not infect other parts of our code.
+In ES6 and above there is _let_ and _const_, so you will not suffer from the sneakiness of _var_. When we use _let_ our variable is block scoped and it will not infect other parts of our code.
 
 ```js
 //scope.js
 function letsLearnScope() {
   // you can use let or const, but gravity is constant I prefer to use const
-  const gravity = 9.81
-  console.log(gravity)
-
+  const gravity = 9.81;
+  console.log(gravity);
 }
 // console.log(gravity), Uncaught ReferenceError: gravity is not defined
 
-if (true){
-  const  gravity = 9.81
-  console.log(gravity) // 9.81
+if (true) {
+  const gravity = 9.81;
+  console.log(gravity); // 9.81
 }
 // console.log(gravity), Uncaught ReferenceError: gravity is not defined
 
-for(let i = 0; i < 3; i++){
-  console.log(i) // 0, 1, 2
+for (let i = 0; i < 3; i++) {
+  console.log(i); // 0, 1, 2
 }
 // console.log(i), Uncaught ReferenceError: i is not defined
-
 ```
 
-The scope *let* and *const* are the same. The difference is only reassigning. We can not change or reassign the value of the `const` variable. I would strongly suggest you to use *let* and *const*, by using *let* and *const* you will write clean code and avoid hard to debug mistakes. As a rule of thumb, you can use *let* for any value which change, *const* for any constant value, and for an array, object, arrow function and function expression.
+The scope _let_ and _const_ are the same. The difference is only reassigning. We can not change or reassign the value of the `const` variable. I would strongly suggest you to use _let_ and _const_, by using _let_ and _const_ you will write clean code and avoid hard to debug mistakes. As a rule of thumb, you can use _let_ for any value which change, _const_ for any constant value, and for an array, object, arrow function and function expression.
 
 ## 📔 Object
 
@@ -185,7 +182,7 @@ To create an object literal, we use two curly brackets.
 An empty object
 
 ```js
-const person = {}
+const person = {};
 ```
 
 ### Creating an objecting with values
@@ -197,29 +194,29 @@ Let us see some examples of object. Each key has a value in the object.
 ```js
 const rectangle = {
   length: 20,
-  width: 20
-}
-console.log(rectangle) // {length: 20, width: 20}
+  width: 20,
+};
+console.log(rectangle); // {length: 20, width: 20}
 
 const person = {
-  firstName: 'Asabeneh',
-  lastName: 'Yetayeh',
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
   age: 250,
-  country: 'Finland',
-  city: 'Helsinki',
+  country: "Finland",
+  city: "Helsinki",
   skills: [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Node',
-    'MongoDB',
-    'Python',
-    'D3.js'
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node",
+    "MongoDB",
+    "Python",
+    "D3.js",
   ],
-  isMarried: true
-}
-console.log(person)
+  isMarried: true,
+};
+console.log(person);
 ```
 
 ### Getting values from an object
@@ -231,42 +228,42 @@ We can access values of object using two methods:
 
 ```js
 const person = {
-  firstName: 'Asabeneh',
-  lastName: 'Yetayeh',
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
   age: 250,
-  country: 'Finland',
-  city: 'Helsinki',
+  country: "Finland",
+  city: "Helsinki",
   skills: [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Node',
-    'MongoDB',
-    'Python',
-    'D3.js'
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node",
+    "MongoDB",
+    "Python",
+    "D3.js",
   ],
-  getFullName: function() {
-    return `${this.firstName}${this.lastName}`
+  getFullName: function () {
+    return `${this.firstName}${this.lastName}`;
   },
-  'phone number': '+3584545454545'
-}
+  "phone number": "+3584545454545",
+};
 
 // accessing values using .
-console.log(person.firstName)
-console.log(person.lastName)
-console.log(person.age)
-console.log(person.location) // undefined
+console.log(person.firstName);
+console.log(person.lastName);
+console.log(person.age);
+console.log(person.location); // undefined
 
 // value can be accessed using square bracket and key name
-console.log(person['firstName'])
-console.log(person['lastName'])
-console.log(person['age'])
-console.log(person['age'])
-console.log(person['location']) // undefined
+console.log(person["firstName"]);
+console.log(person["lastName"]);
+console.log(person["age"]);
+console.log(person["age"]);
+console.log(person["location"]); // undefined
 
 // for instance to access the phone number we only use the square bracket method
-console.log(person['phone number'])
+console.log(person["phone number"]);
 ```
 
 ### Creating object methods
@@ -275,27 +272,27 @@ Now, the person object has getFullName properties. The getFullName is function i
 
 ```js
 const person = {
-  firstName: 'Asabeneh',
-  lastName: 'Yetayeh',
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
   age: 250,
-  country: 'Finland',
-  city: 'Helsinki',
+  country: "Finland",
+  city: "Helsinki",
   skills: [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Node',
-    'MongoDB',
-    'Python',
-    'D3.js'
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node",
+    "MongoDB",
+    "Python",
+    "D3.js",
   ],
-  getFullName: function() {
-    return `${this.firstName} ${this.lastName}`
-  }
-}
+  getFullName: function () {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
 
-console.log(person.getFullName())
+console.log(person.getFullName());
 // Asabeneh Yetayeh
 ```
 
@@ -307,45 +304,45 @@ Setting a new keys in an object
 
 ```js
 const person = {
-  firstName: 'Asabeneh',
-  lastName: 'Yetayeh',
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
   age: 250,
-  country: 'Finland',
-  city: 'Helsinki',
+  country: "Finland",
+  city: "Helsinki",
   skills: [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Node',
-    'MongoDB',
-    'Python',
-    'D3.js'
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node",
+    "MongoDB",
+    "Python",
+    "D3.js",
   ],
-  getFullName: function() {
-    return `${this.firstName} ${this.lastName}`
-  }
-}
-person.nationality = 'Ethiopian'
-person.country = 'Finland'
-person.title = 'teacher'
-person.skills.push('Meteor')
-person.skills.push('SasS')
-person.isMarried = true
+  getFullName: function () {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+person.nationality = "Ethiopian";
+person.country = "Finland";
+person.title = "teacher";
+person.skills.push("Meteor");
+person.skills.push("SasS");
+person.isMarried = true;
 
-person.getPersonInfo = function() {
+person.getPersonInfo = function () {
   let skillsWithoutLastSkill = this.skills
     .splice(0, this.skills.length - 1)
-    .join(', ')
-  let lastSkill = this.skills.splice(this.skills.length - 1)[0]
+    .join(", ");
+  let lastSkill = this.skills.splice(this.skills.length - 1)[0];
 
-  let skills = `${skillsWithoutLastSkill}, and ${lastSkill}`
-  let fullName = this.getFullName()
-  let statement = `${fullName} is a ${this.title}.\nHe lives in ${this.country}.\nHe teaches ${skills}.`
-  return statement
-}
-console.log(person)
-console.log(person.getPersonInfo())
+  let skills = `${skillsWithoutLastSkill}, and ${lastSkill}`;
+  let fullName = this.getFullName();
+  let statement = `${fullName} is a ${this.title}.\nHe lives in ${this.country}.\nHe teaches ${skills}.`;
+  return statement;
+};
+console.log(person);
+console.log(person.getPersonInfo());
 ```
 
 ```sh
@@ -362,27 +359,27 @@ _Object.assign_: To copy an object without modifying the original object
 
 ```js
 const person = {
-  firstName: 'Asabeneh',
+  firstName: "Asabeneh",
   age: 250,
-  country: 'Finland',
-  city:'Helsinki',
-  skills: ['HTML', 'CSS', 'JS'],
-  title: 'teacher',
+  country: "Finland",
+  city: "Helsinki",
+  skills: ["HTML", "CSS", "JS"],
+  title: "teacher",
   address: {
-    street: 'Heitamienkatu 16',
+    street: "Heitamienkatu 16",
     pobox: 2002,
-    city: 'Helsinki'
+    city: "Helsinki",
   },
-  getPersonInfo: function() {
-    return `I am ${this.firstName} and I live in ${this.city}, ${this.country}. I am ${this.age}.`
-  }
-}
+  getPersonInfo: function () {
+    return `I am ${this.firstName} and I live in ${this.city}, ${this.country}. I am ${this.age}.`;
+  },
+};
 
 //Object methods: Object.assign, Object.keys, Object.values, Object.entries
 //hasOwnProperty
 
-const copyPerson = Object.assign({}, person)
-console.log(copyPerson)
+const copyPerson = Object.assign({}, person);
+console.log(copyPerson);
 ```
 
 #### Getting object keys using Object.keys()
@@ -390,10 +387,10 @@ console.log(copyPerson)
 _Object.keys_: To get the keys or properties of an object as an array
 
 ```js
-const keys = Object.keys(copyPerson)
-console.log(keys) //['firstName', 'age', 'country','city', 'skills','title', 'address', 'getPersonInfo']
-const address = Object.keys(copyPerson.address)
-console.log(address) //['street', 'pobox', 'city']
+const keys = Object.keys(copyPerson);
+console.log(keys); //['firstName', 'age', 'country','city', 'skills','title', 'address', 'getPersonInfo']
+const address = Object.keys(copyPerson.address);
+console.log(address); //['street', 'pobox', 'city']
 ```
 
 #### Getting object values using Object.values()
@@ -401,8 +398,8 @@ console.log(address) //['street', 'pobox', 'city']
 _Object.values_:To get values of an object as an array
 
 ```js
-const values = Object.values(copyPerson)
-console.log(values)
+const values = Object.values(copyPerson);
+console.log(values);
 ```
 
 #### Getting object keys and values using Object.entries()
@@ -410,8 +407,8 @@ console.log(values)
 _Object.entries_:To get the keys and values in an array
 
 ```js
-const entries = Object.entries(copyPerson)
-console.log(entries)
+const entries = Object.entries(copyPerson);
+console.log(entries);
 ```
 
 #### Checking properties using hasOwnProperty()
@@ -419,8 +416,8 @@ console.log(entries)
 _hasOwnProperty_: To check if a specific key or property exist in an object
 
 ```js
-console.log(copyPerson.hasOwnProperty('name'))
-console.log(copyPerson.hasOwnProperty('score'))
+console.log(copyPerson.hasOwnProperty("name"));
+console.log(copyPerson.hasOwnProperty("score"));
 ```
 
 🌕 You are astonishing. Now, you are super charged with the power of objects. You have just completed day 8 challenges and you are 8 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
@@ -430,15 +427,45 @@ console.log(copyPerson.hasOwnProperty('score'))
 ### Exercises: Level 1
 
 1. Create an empty object called dog
-1. Print the the dog object on the console
-1. Add name, legs, color, age and bark properties for the dog object. The bark property is a method which return _woof woof_
-1. Get name, legs, color, age and bark value from the dog object
-1. Set new properties the dog object: breed, getDogInfo
+```js
+let dog = {};
+```
+2. Print the the dog object on the console
+```js
+console.log(dog);
+```
+
+3. Add name, legs, color, age and bark properties for the dog object. The bark property is a method which return _woof woof_
+```js
+dog.name = "M"
+dog.legs = 8
+dog.color = "dark"
+dog.age = 99
+dog.bark = function() {
+    return "woof woof"
+}
+```
+
+4. Get name, legs, color, age and bark value from the dog object
+```js
+console.log(dog.name)
+console.log(dog.legs)
+console.log(dog.color)
+console.log(dog.age)
+console.log(dog.bark())
+```
+
+5. Set new properties the dog object: breed, getDogInfo
+
+```js
+dog.breed = "thai"
+dog.getDogInfo = function() {
+    return this;
+}
+```
+
 
 ### Exercises: Level 2
-
-1. Find the person who has many skills in the users object.
-1. Count logged in users, count users having greater than equal to 50 points from the following object.
 
    ````js
    const users = {
@@ -493,102 +520,105 @@ console.log(copyPerson.hasOwnProperty('score'))
      }
    }```
 
-1. Find people who are MERN stack developer from the users object
-1. Set your name in the users object without modifying the original users object
-1. Get all keys or properties of users object
-1. Get all the values of users object
-1. Use the countries object to print a country name, capital, populations and languages.
+   ````
+1. Find the person who has many skills in the users object.
+2. Count logged in users, count users having greater than equal to 50 points from the following object.
+
+3. Find people who are MERN stack developer from the users object
+4. Set your name in the users object without modifying the original users object
+5. Get all keys or properties of users object
+6. Get all the values of users object
+7. Use the countries object to print a country name, capital, populations and languages.
 
 ### Exercises: Level 3
 
 1. Create an object literal called _personAccount_. It has _firstName, lastName, incomes, expenses_ properties and it has _totalIncome, totalExpense, accountInfo,addIncome, addExpense_ and _accountBalance_ methods. Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
-2. **** Questions:2, 3 and 4 are based on the following two arrays:users and products ()
+2. \*\*\*\* Questions:2, 3 and 4 are based on the following two arrays:users and products ()
 
-  ```js
-      const users = [
-      {
-          _id: 'ab12ex',
-          username: 'Alex',
-          email: 'alex@alex.com',
-          password: '123123',
-          createdAt:'08/01/2020 9:00 AM',
-          isLoggedIn: false
-      },
-      {
-          _id: 'fg12cy',
-          username: 'Asab',
-          email: 'asab@asab.com',
-          password: '123456',
-          createdAt:'08/01/2020 9:30 AM',
-          isLoggedIn: true
-      },
-      {
-          _id: 'zwf8md',
-          username: 'Brook',
-          email: 'brook@brook.com',
-          password: '123111',
-          createdAt:'08/01/2020 9:45 AM',
-          isLoggedIn: true
-      },
-      {
-          _id: 'eefamr',
-          username: 'Martha',
-          email: 'martha@martha.com',
-          password: '123222',
-          createdAt:'08/01/2020 9:50 AM',
-          isLoggedIn: false
-      },
-      {
-          _id: 'ghderc',
-          username: 'Thomas',
-          email: 'thomas@thomas.com',
-          password: '123333',
-          createdAt:'08/01/2020 10:00 AM',
-          isLoggedIn: false
-      }
-      ];
+```js
+const users = [
+  {
+    _id: "ab12ex",
+    username: "Alex",
+    email: "alex@alex.com",
+    password: "123123",
+    createdAt: "08/01/2020 9:00 AM",
+    isLoggedIn: false,
+  },
+  {
+    _id: "fg12cy",
+    username: "Asab",
+    email: "asab@asab.com",
+    password: "123456",
+    createdAt: "08/01/2020 9:30 AM",
+    isLoggedIn: true,
+  },
+  {
+    _id: "zwf8md",
+    username: "Brook",
+    email: "brook@brook.com",
+    password: "123111",
+    createdAt: "08/01/2020 9:45 AM",
+    isLoggedIn: true,
+  },
+  {
+    _id: "eefamr",
+    username: "Martha",
+    email: "martha@martha.com",
+    password: "123222",
+    createdAt: "08/01/2020 9:50 AM",
+    isLoggedIn: false,
+  },
+  {
+    _id: "ghderc",
+    username: "Thomas",
+    email: "thomas@thomas.com",
+    password: "123333",
+    createdAt: "08/01/2020 10:00 AM",
+    isLoggedIn: false,
+  },
+];
 
-      const products = [
-    {
-      _id: 'eedfcf',
-      name: 'mobile phone',
-      description: 'Huawei Honor',
-      price: 200,
-      ratings: [
-        { userId: 'fg12cy', rate: 5 },
-        { userId: 'zwf8md', rate: 4.5 }
-      ],
-      likes: []
-    },
-    {
-      _id: 'aegfal',
-      name: 'Laptop',
-      description: 'MacPro: System Darwin',
-      price: 2500,
-      ratings: [],
-      likes: ['fg12cy']
-    },
-    {
-      _id: 'hedfcg',
-      name: 'TV',
-      description: 'Smart TV:Procaster',
-      price: 400,
-      ratings: [{ userId: 'fg12cy', rate: 5 }],
-      likes: ['fg12cy']
-    }
-  ]
-  ```
+const products = [
+  {
+    _id: "eedfcf",
+    name: "mobile phone",
+    description: "Huawei Honor",
+    price: 200,
+    ratings: [
+      { userId: "fg12cy", rate: 5 },
+      { userId: "zwf8md", rate: 4.5 },
+    ],
+    likes: [],
+  },
+  {
+    _id: "aegfal",
+    name: "Laptop",
+    description: "MacPro: System Darwin",
+    price: 2500,
+    ratings: [],
+    likes: ["fg12cy"],
+  },
+  {
+    _id: "hedfcg",
+    name: "TV",
+    description: "Smart TV:Procaster",
+    price: 400,
+    ratings: [{ userId: "fg12cy", rate: 5 }],
+    likes: ["fg12cy"],
+  },
+];
+```
 
-  Imagine you are getting the above users collection from a MongoDB database.
-    a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.  
-    b. Create a function called signIn which allows user to sign in to the application  
+Imagine you are getting the above users collection from a MongoDB database.
+a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.  
+ b. Create a function called signIn which allows user to sign in to the application
 
 3. The products array has three elements and each of them has six properties.
-    a. Create a function called rateProduct which rates the product
-    b. Create a function called averageRating which calculate the average rating of a product  
+   a. Create a function called rateProduct which rates the product
+   b. Create a function called averageRating which calculate the average rating of a product
 
 4. Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
-
 
 🎉 CONGRATULATIONS ! 🎉
 

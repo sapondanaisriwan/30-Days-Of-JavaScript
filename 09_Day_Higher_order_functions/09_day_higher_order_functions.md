@@ -19,29 +19,29 @@
 ![Day 5](../images/banners/day_1_9.png)
 
 - [Day 9](#day-9)
-	- [Higher Order Function](#higher-order-function)
-		- [Callback](#callback)
-		- [Returning function](#returning-function)
-		- [Setting time](#setting-time)
-			- [Setting Interval using a setInterval function](#setting-interval-using-a-setinterval-function)
-			- [Setting a time using a setTimeout](#setting-a-time-using-a-settimeout)
-	- [Functional Programming](#functional-programming)
-		- [forEach](#foreach)
-		- [map](#map)
-		- [filter](#filter)
-		- [reduce](#reduce)
-		- [every](#every)
-		- [find](#find)
-		- [findIndex](#findindex)
-		- [some](#some)
-		- [sort](#sort)
-			- [Sorting string values](#sorting-string-values)
-			- [Sorting Numeric values](#sorting-numeric-values)
-			- [Sorting Object Arrays](#sorting-object-arrays)
-	- [💻 Exercises](#-exercises)
-		- [Exercises: Level 1](#exercises-level-1)
-		- [Exercises: Level 2](#exercises-level-2)
-		- [Exercises: Level 3](#exercises-level-3)
+  - [Higher Order Function](#higher-order-function)
+    - [Callback](#callback)
+    - [Returning function](#returning-function)
+    - [Setting time](#setting-time)
+      - [Setting Interval using a setInterval function](#setting-interval-using-a-setinterval-function)
+      - [Setting a time using a setTimeout](#setting-a-time-using-a-settimeout)
+  - [Functional Programming](#functional-programming)
+    - [forEach](#foreach)
+    - [map](#map)
+    - [filter](#filter)
+    - [reduce](#reduce)
+    - [every](#every)
+    - [find](#find)
+    - [findIndex](#findindex)
+    - [some](#some)
+    - [sort](#sort)
+      - [Sorting string values](#sorting-string-values)
+      - [Sorting Numeric values](#sorting-numeric-values)
+      - [Sorting Object Arrays](#sorting-object-arrays)
+  - [💻 Exercises](#-exercises)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # Day 9
 
@@ -572,31 +572,167 @@ const products = [
 
 1. Explain the difference between **_forEach, map, filter, and reduce_**.
 2. Define a callback function before you use it in forEach, map, filter or reduce.
+
+```js
+function callBackFunction() {}
+```
+
 3. Use **_forEach_** to console.log each country in the countries array.
+
+```js
+countries.forEach((element, index, arr) => {
+  console.log(element);
+});
+```
+
 4. Use **_forEach_** to console.log each name in the names array.
+
+```js
+names.forEach((name, index, arr) => {
+    console.log(name)
+})
+```
+
 5. Use **_forEach_** to console.log each number in the numbers array.
+
+```js
+numbers.forEach((number, index, arr) => {
+    console.log(number)
+})
+
+numbers.forEach(number => console.log(number))
+```
+
 6. Use **_map_** to create a new array by changing each country to uppercase in the countries array.
+
+```js
+let newCountries = countries.map(country => country.toUpperCase())
+console.log(newCountries)
+```
+
 7. Use **_map_** to create an array of countries length from countries array.
+
+```js
+let newCountriesLength = countries.map(country => country.length)
+console.log(newCountriesLength)
+```
+
 8. Use **_map_** to create a new array by changing each number to square in the numbers array
-9. Use **_map_** to change to each name to uppercase in the names array
+
+```js
+let squareNumber = numbers.map(eachNumber => eachNumber**2)
+console.log(squareNumber);
+```
+
+9.  Use **_map_** to change to each name to uppercase in the names array
+
+```js
+let newNames = names.map((eachName) => eachName.toUpperCase())
+console.log(newNames)
+```
+
 10. Use **_map_** to map the products array to its corresponding prices.
+
+```js
+let newProducts = products.map(element => element.price)
+console.log(newProducts)
+```
+
 11. Use **_filter_** to filter out countries containing **_land_**.
+
+```js
+let filterCountries = countries.filter((element) => element.includes("land"))
+console.log(filterCountries)
+```
+
 12. Use **_filter_** to filter out countries having six character.
+
+```js
+let filterCountries = countries.filter(eachCountry => eachCountry.length === 6);
+
+console.log(filterCountries);
+```
+
 13. Use **_filter_** to filter out countries containing six letters and more in the country array.
+
+```js
+let filterCountries = countries.filter(eachCountry => eachCountry.length >= 6);
+
+console.log(filterCountries);
+```
+
 14. Use **_filter_** to filter out country start with 'E';
+
+```js
+let filterCountries = countries.filter(eachCountry => eachCountry.startsWith("E"));
+
+console.log(filterCountries);
+```
+
 15. Use **_filter_** to filter out only prices with values.
+
+```js
+let filterProducts = products.filter(eachProduct => typeof eachProduct.price === 'number');
+
+console.log(filterProducts);
+```
+
 16. Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
+
+```js
+function getStringLists(...arr) {
+  return arr.filter((value) => typeof value === "string")
+}
+
+console.log(getStringLists("Hello", "How", "Are", true, false, 1, 23, 9, {}));
+```
+
 17. Use **_reduce_** to sum all the numbers in the numbers array.
+```js
+let sum = numbers.reduce((acc, cur) => {
+ return acc + cur
+}, 0)
+console.log(sum)
+```
 18. Use **_reduce_** to concatenate all the countries and to produce this sentence: **_Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries_**
+```js
+let countryStr = countries.reduce((result, element) => {
+  return result+element+", "
+}, "")
+console.log(countryStr);
+```
 19. Explain the difference between **_some_** and **_every_**
 20. Use **_some_** to check if some names' length greater than seven in names array
+```js
+let lengthChecker = names.some(eachName  => eachName.length > 7);
+console.log(lengthChecker)
+```
 21. Use **_every_** to check if all the countries contain the word land
+```js
+let countriesChecker = countries.every(eachCountry  => eachCountry.includes("land"));
+console.log(countriesChecker)
+```
 22. Explain the difference between **_find_** and **_findIndex_**.
 23. Use **_find_** to find the first country containing only six letters in the countries array
+```js
+let newCountries = countries.find(eachCountry => eachCountry.length === 6)
+console.log(newCountries);
+```
 24. Use **_findIndex_** to find the position of the first country containing only six letters in the countries array
+```js
+let newCountries = countries.findIndex(eachCountry => eachCountry.length === 6)
+console.log(newCountries);
+```
 25. Use **_findIndex_** to find the position of **_Norway_** if it doesn't exist in the array you will get -1.
-26. Use **_findIndex_** to find the position of **_Russia_** if it doesn't exist in the array you will get -1.
-
+```js
+let newCountries = countries.findIndex(eachCountry => eachCountry === "Norway")
+console.log(newCountries);
+```
+26. Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+```js
+let newCountries = countries.findIndex(eachCountry => eachCountry === "Russia")
+console.log(newCountries);
+```
 ### Exercises: Level 2
 
 1. Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
