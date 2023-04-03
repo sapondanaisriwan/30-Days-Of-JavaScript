@@ -19,26 +19,26 @@
 ![Day 10](../images/banners/day_1_10.png)
 
 - [Day 10](#day-10)
-	- [Set](#set)
-		- [Creating an empty set](#creating-an-empty-set)
-		- [Creating set from array](#creating-set-from-array)
-		- [Adding an element to a set](#adding-an-element-to-a-set)
-		- [Deleting an element a set](#deleting-an-element-a-set)
-		- [Checking an element in the set](#checking-an-element-in-the-set)
-		- [Clearing the set](#clearing-the-set)
-		- [Union of sets](#union-of-sets)
-		- [Intersection of sets](#intersection-of-sets)
-		- [Difference of sets](#difference-of-sets)
-	- [Map](#map)
-		- [Creating an empty Map](#creating-an-empty-map)
-		- [Creating an Map from array](#creating-an-map-from-array)
-		- [Adding values to the Map](#adding-values-to-the-map)
-		- [Getting a value from Map](#getting-a-value-from-map)
-		- [Checking key in Map](#checking-key-in-map)
-	- [Exercises](#exercises)
-		- [Exercises:Level 1](#exerciseslevel-1)
-		- [Exercises:Level 2](#exerciseslevel-2)
-		- [Exercises:Level 3](#exerciseslevel-3)
+  - [Set](#set)
+    - [Creating an empty set](#creating-an-empty-set)
+    - [Creating set from array](#creating-set-from-array)
+    - [Adding an element to a set](#adding-an-element-to-a-set)
+    - [Deleting an element a set](#deleting-an-element-a-set)
+    - [Checking an element in the set](#checking-an-element-in-the-set)
+    - [Clearing the set](#clearing-the-set)
+    - [Union of sets](#union-of-sets)
+    - [Intersection of sets](#intersection-of-sets)
+    - [Difference of sets](#difference-of-sets)
+  - [Map](#map)
+    - [Creating an empty Map](#creating-an-empty-map)
+    - [Creating an Map from array](#creating-an-map-from-array)
+    - [Adding values to the Map](#adding-values-to-the-map)
+    - [Getting a value from Map](#getting-a-value-from-map)
+    - [Checking key in Map](#checking-key-in-map)
+  - [Exercises](#exercises)
+    - [Exercises:Level 1](#exerciseslevel-1)
+    - [Exercises:Level 2](#exerciseslevel-2)
+    - [Exercises:Level 3](#exerciseslevel-3)
 
 # Day 10
 
@@ -390,11 +390,33 @@ const b = [3, 4, 5, 7]
 const countries = ['Finland', 'Sweden', 'Norway']
 ```
 
+
 1. create an empty set
+```js
+const newSet = new Set();
+```
 2. Create a set containing 0 to 10 using loop
+```js
+for (let i=0; i<=10; i++) {
+    newSet.add(i);
+}
+console.log(newSet)
+```
 3. Remove an element from a set
+```js
+const newSet = new Set([0, 2, 3, 4]);
+newSet.delete(0);
+console.log(newSet)
+```
 4. Clear a set
+```js
+newSet.clear();
+```
 5. Create a set of 5 string elements from array
+```js
+const newSet = new Set(["A","B","C","D","E"]);
+console.log(newSet)
+```
 6. Create a map of countries and number of characters of a country
 
 ### Exercises:Level 2
