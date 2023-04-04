@@ -18,29 +18,29 @@
 ![Thirty Days Of JavaScript](../images/banners/day_1_12.png)
 
 - [📘 Day 12](#-day-12)
-	- [Regular Expressions](#regular-expressions)
-		- [RegExp parameters](#regexp-parameters)
-			- [Pattern](#pattern)
-			- [Flags](#flags)
-		- [Creating a pattern with RegExp Constructor](#creating-a-pattern-with-regexp-constructor)
-		- [Creating a pattern without RegExp Constructor](#creating-a-pattern-without-regexp-constructor)
-		- [RegExpp Object Methods](#regexpp-object-methods)
-			- [Testing for  a match](#testing-for--a-match)
-			- [Array containing all of the match](#array-containing-all-of-the-match)
-			- [Replacing a substring](#replacing-a-substring)
-		- [Square Bracket](#square-bracket)
-		- [Escape character(\\) in RegExp](#escape-character-in-regexp)
-		- [One or more times(+)](#one-or-more-times)
-		- [Period(.)](#period)
-		- [Zero or more times(*)](#zero-or-more-times)
-		- [Zero or one times(?)](#zero-or-one-times)
-		- [Quantifier in RegExp](#quantifier-in-regexp)
-		- [Cart ^](#cart-)
-		- [Exact match](#exact-match)
-	- [💻 Exercises](#-exercises)
-		- [Exercises: Level 1](#exercises-level-1)
-		- [Exercises: Level 2](#exercises-level-2)
-		- [Exercises: Level 3](#exercises-level-3)
+  - [Regular Expressions](#regular-expressions)
+    - [RegExp parameters](#regexp-parameters)
+      - [Pattern](#pattern)
+      - [Flags](#flags)
+    - [Creating a pattern with RegExp Constructor](#creating-a-pattern-with-regexp-constructor)
+    - [Creating a pattern without RegExp Constructor](#creating-a-pattern-without-regexp-constructor)
+    - [RegExpp Object Methods](#regexpp-object-methods)
+      - [Testing for  a match](#testing-for--a-match)
+      - [Array containing all of the match](#array-containing-all-of-the-match)
+      - [Replacing a substring](#replacing-a-substring)
+    - [Square Bracket](#square-bracket)
+    - [Escape character(\\) in RegExp](#escape-character-in-regexp)
+    - [One or more times(+)](#one-or-more-times)
+    - [Period(.)](#period)
+    - [Zero or more times(\*)](#zero-or-more-times)
+    - [Zero or one times(?)](#zero-or-one-times)
+    - [Quantifier in RegExp](#quantifier-in-regexp)
+    - [Cart ^](#cart-)
+    - [Exact match](#exact-match)
+  - [💻 Exercises](#-exercises)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 12
 
@@ -442,7 +442,17 @@ console.log(result) // true
 ### Exercises: Level 1
 
 1. Calculate the total annual income of the person from the following text. ‘He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro online courses per month.’
-1. The position of some particles on the horizontal x-axis -12, -4, -3 and  -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers and find the distance between the two furthest particles.
+
+```js
+const txt =
+  "He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro online courses per month.";
+const patten = /\d+/g;
+const result = txt.match(patten);
+const perMonth = (+result[0] + +result[2]) * 12 + +result[1];
+console.log(perMonth);
+```
+
+2. The position of some particles on the horizontal x-axis -12, -4, -3 and  -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers and find the distance between the two furthest particles.
 
 ```js
 points = ['-1', '2', '-4', '-3', '-1', '0', '4', '8']
