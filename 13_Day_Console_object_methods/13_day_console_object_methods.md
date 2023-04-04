@@ -19,21 +19,21 @@
 ![Thirty Days Of JavaScript](../images/banners/day_1_13.png)
 
 - [Day 13](#day-13)
-	- [Console Object Methods](#console-object-methods)
-		- [console.log()](#consolelog)
-		- [console.warn()](#consolewarn)
-		- [console.error()](#consoleerror)
-		- [console.table()](#consoletable)
-		- [console.time()](#consoletime)
-		- [console.info()](#consoleinfo)
-		- [console.assert()](#consoleassert)
-		- [console.group()](#consolegroup)
-		- [console.count()](#consolecount)
-		- [console.clear()](#consoleclear)
-	- [Exercises](#exercises)
-		- [Exercises:Level 1](#exerciseslevel-1)
-		- [Exercises:Level 2](#exerciseslevel-2)
-		- [Exercises:Level 3](#exerciseslevel-3)
+  - [Console Object Methods](#console-object-methods)
+    - [console.log()](#consolelog)
+    - [console.warn()](#consolewarn)
+    - [console.error()](#consoleerror)
+    - [console.table()](#consoletable)
+    - [console.time()](#consoletime)
+    - [console.info()](#consoleinfo)
+    - [console.assert()](#consoleassert)
+    - [console.group()](#consolegroup)
+    - [console.count()](#consolecount)
+    - [console.clear()](#consoleclear)
+  - [Exercises](#exercises)
+    - [Exercises:Level 1](#exerciseslevel-1)
+    - [Exercises:Level 2](#exerciseslevel-2)
+    - [Exercises:Level 3](#exerciseslevel-3)
 
 # Day 13
 
@@ -340,8 +340,71 @@ The console.clear() cleans the browser console.
 ### Exercises:Level 1
 
 1.  Display the countries array as a table
+
+```js
+let countries = ["Thailand", "China", "England", "Iceland", "Findland"]
+console.table(countries)
+```
+
 2.  Display the countries object as a table
+
+```js
+const user = {
+  name: "Asabeneh",
+  title: "Programmer",
+  country: "Finland",
+  city: "Helsinki",
+  age: 250,
+};
+console.table(user);
+```
+
 3.  Use console.group() to group logs
+```js
+const users = [
+  {
+    name: 'Asabeneh',
+    title: 'Programmer',
+    country: 'Finland',
+    city: 'Helsinki',
+    age: 250
+  },
+  {
+    name: 'Eyob',
+    title: 'Teacher',
+    country: 'Sweden',
+    city: 'London',
+    age: 25
+  },
+  {
+    name: 'Asab',
+    title: 'Instructor',
+    country: 'Norway',
+    city: 'Oslo',
+    age: 22
+  },
+  {
+    name: 'Matias',
+    title: 'Developer',
+    country: 'Denmark',
+    city: 'Copenhagen',
+    age: 28
+  }
+]
+
+console.group('Names')
+console.log(names)
+console.groupEnd()
+
+console.group('Countries')
+console.log(countries)
+console.groupEnd()
+
+console.group('Users')
+console.log(user)
+console.log(users)
+console.groupEnd()
+```
 
 ### Exercises:Level 2
 
