@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Document Object Model</title>
+    <title>Document Object Model:30 Days Of JavaScript</title>
   </head>
+
   <body>
-    <p id="p1">first</p>
-    <p id="p2">second</p>
-    <p id="p3">third</p>
-    <p id="p4">forth</p>
+    <h1>Key events: Press any key</h1>
+
+    <script>
+      document.body.addEventListener('keypress', e => {
+        alert(e.keyCode)
+      })
+    </script>
   </body>
 </html>
