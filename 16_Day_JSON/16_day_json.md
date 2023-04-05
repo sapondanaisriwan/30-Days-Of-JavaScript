@@ -19,16 +19,16 @@
 ![Thirty Days Of JavaScript](../images/banners/day_1_16.png)
 
 - [Day 16](#day-16)
-	- [JSON](#json)
-		- [Converting JSON to JavaScript Object](#converting-json-to-javascript-object)
-			- [JSON.parse()](#jsonparse)
-		- [Using a reviver function with JSON.parse()](#using-a-reviver-function-with-jsonparse)
-		- [Converting Object to JSON](#converting-object-to-json)
-		- [Using a Filter Array with JSON.stringify](#using-a-filter-array-with-jsonstringify)
-	- [Exercises](#exercises)
-		- [Exercises Level 1](#exercises-level-1)
-		- [Exercises Level 2](#exercises-level-2)
-		- [Exercises Level 3](#exercises-level-3)
+  - [JSON](#json)
+    - [Converting JSON to JavaScript Object](#converting-json-to-javascript-object)
+      - [JSON.parse()](#jsonparse)
+    - [Using a reviver function with JSON.parse()](#using-a-reviver-function-with-jsonparse)
+    - [Converting Object to JSON](#converting-object-to-json)
+    - [Using a Filter Array with JSON.stringify](#using-a-filter-array-with-jsonstringify)
+  - [Exercises](#exercises)
+    - [Exercises Level 1](#exercises-level-1)
+    - [Exercises Level 2](#exercises-level-2)
+    - [Exercises Level 3](#exercises-level-3)
 
 # Day 16
 
@@ -580,17 +580,49 @@ const txt = `{
 ### Exercises Level 1
 
 1. Change skills array to JSON using JSON.stringify()
-1. Stringify the age variable
-1. Stringify the isMarried variable
-1. Stringify the student object
+
+```js
+const jsonSkill = JSON.stringify(skills);
+```
+
+2. Stringify the age variable
+```js
+const jsonAge = JSON.stringify(age);
+console.log(typeof age);
+console.log(typeof jsonAge);
+```
+
+3. Stringify the isMarried variable
+
+```js
+const test = JSON.stringify(isMarried);
+console.log(typeof isMarried);
+console.log(typeof test);
+```
+4. Stringify the student object
+
+```js
+const test = JSON.stringify(student);
+console.log(typeof student);
+console.log(typeof test);
+```
 
 ### Exercises Level 2
 
 1. Stringify the students object with only firstName, lastName and skills properties
+```js
+const test = JSON.stringify(student, ['firstName', 'lastName', 'skills']);
+```
 
 ### Exercises Level 3
 
 1. Parse the *txt* JSON to object.
+
+```js
+const test = JSON.parse(txt);
+console.log(test);
+```
+
 2. Find the user who has many skills from the variable stored in *txt*.
 
 🎉 CONGRATULATIONS ! 🎉

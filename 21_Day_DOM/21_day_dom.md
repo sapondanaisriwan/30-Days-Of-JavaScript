@@ -19,31 +19,31 @@
 ![Thirty Days Of JavaScript](../images/banners/day_1_21.png)
 
 - [Day 21](#day-21)
-	- [Document Object Model (DOM) - Day 1](#document-object-model-dom---day-1)
-		- [Getting Element](#getting-element)
-			- [Getting elements by tag name](#getting-elements-by-tag-name)
-			- [Getting elements by class name](#getting-elements-by-class-name)
-			- [Getting an element by id](#getting-an-element-by-id)
-			- [Getting elements by using querySelector methods](#getting-elements-by-using-queryselector-methods)
-		- [Adding attribute](#adding-attribute)
-			- [Adding attribute using setAttribute](#adding-attribute-using-setattribute)
-			- [Adding attribute without setAttribute](#adding-attribute-without-setattribute)
-			- [Adding class using classList](#adding-class-using-classlist)
-			- [Removing class using remove](#removing-class-using-remove)
-		- [Adding Text to HTML element](#adding-text-to-html-element)
-			- [Adding Text content using textContent](#adding-text-content-using-textcontent)
-			- [Adding Text Content using innerHTML](#adding-text-content-using-innerhtml)
-				- [Text Content](#text-content)
-				- [Inner HTML](#inner-html)
-		- [Adding style](#adding-style)
-			- [Adding Style Color](#adding-style-color)
-			- [Adding Style Background Color](#adding-style-background-color)
-			- [Adding Style Font Size](#adding-style-font-size)
-	- [Exercises](#exercises)
-		- [Exercise: Level 1](#exercise-level-1)
-		- [Exercise: Level 2](#exercise-level-2)
-		- [Exercise: Level 3](#exercise-level-3)
-			- [DOM: Mini project 1](#dom-mini-project-1)
+  - [Document Object Model (DOM) - Day 1](#document-object-model-dom---day-1)
+    - [Getting Element](#getting-element)
+      - [Getting elements by tag name](#getting-elements-by-tag-name)
+      - [Getting elements by class name](#getting-elements-by-class-name)
+      - [Getting an element by id](#getting-an-element-by-id)
+      - [Getting elements by using querySelector methods](#getting-elements-by-using-queryselector-methods)
+    - [Adding attribute](#adding-attribute)
+      - [Adding attribute using setAttribute](#adding-attribute-using-setattribute)
+      - [Adding attribute without setAttribute](#adding-attribute-without-setattribute)
+      - [Adding class using classList](#adding-class-using-classlist)
+      - [Removing class using remove](#removing-class-using-remove)
+    - [Adding Text to HTML element](#adding-text-to-html-element)
+      - [Adding Text content using textContent](#adding-text-content-using-textcontent)
+      - [Adding Text Content using innerHTML](#adding-text-content-using-innerhtml)
+        - [Text Content](#text-content)
+        - [Inner HTML](#inner-html)
+    - [Adding style](#adding-style)
+      - [Adding Style Color](#adding-style-color)
+      - [Adding Style Background Color](#adding-style-background-color)
+      - [Adding Style Font Size](#adding-style-font-size)
+  - [Exercises](#exercises)
+    - [Exercise: Level 1](#exercise-level-1)
+    - [Exercise: Level 2](#exercise-level-2)
+    - [Exercise: Level 3](#exercise-level-3)
+      - [DOM: Mini project 1](#dom-mini-project-1)
 
 # Day 21
 
@@ -350,12 +350,67 @@ As you have notice, the properties of css when we use it in JavaScript is going 
 
 ### Exercise: Level 1
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <p id="p1">first</p>
+    <p id="p2">second</p>
+    <p id="p3">third</p>
+    <p id="p4">forth</p>
+  </body>
+</html>
+```
+
 1. Create an index.html file and put four p elements as above: Get the first paragraph by using **_document.querySelector(tagname)_** and tag name
+
+```js
+let getFirstP = document.querySelector("p");
+console.log(getFirstP);
+```
+
 2. Get each of the the paragraph using **_document.querySelector('#id')_** and by their id
+
+```js
+let getFirstP = document.querySelector("#p1");
+let getSecP = document.querySelector("#p2");
+let getThirdP = document.querySelector("#p3");
+let getFourthP = document.querySelector("#p4");
+```
+
 3. Get all the p as nodeList using **_document.querySelectorAll(tagname)_** and by their tag name
+
+```js
+let getAllP = document.querySelectorAll("p");
+console.log(getAllP);
+```
+
 4. Loop through the nodeList and get the text content of each paragraph
+
+```js
+const getAllP = document.querySelectorAll("p");
+const test = getAllP.forEach(eachElement => console.log(eachElement.textContent));
+```
+
 5. Set a text content to paragraph the fourth paragraph,**_Fourth Paragraph_**
+
+```js
+let getFourthP = document.querySelector("#p4");
+getFourthP.textContent = "Hello how are you"
+```
+
 6. Set id and class attribute for all the paragraphs using different attribute setting methods
+
+```js
+const getAllP = document.querySelectorAll("p");
+getAllP.forEach((eachElement, index) => {
+  eachElement.classList = index;
+  eachElement.id = index;
+});
+```
 
 ### Exercise: Level 2
 
