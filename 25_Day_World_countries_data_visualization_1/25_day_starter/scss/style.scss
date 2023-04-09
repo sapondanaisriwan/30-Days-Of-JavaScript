@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#countries {
+  h2,
+  .subtitle {
+    text-align: center;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.group-buttons {
+  display: flex;
+  justify-content: center;
+  & + p {
+    text-align: center;
+  }
+}
+.wrapper {
+  width: 100%;
+  // .graphs {
+  //   width: 100%;
+  // }
+}
+
+.graph-wrapper {
+  // display: flex;
+  // flex-direction: column;
+  .test {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.graph-width {
+  height: 40px;
+  background-color: green;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  > span {
+    padding: 4px;
+    width: 80px;
+    text-align: center;
+  }
+}
+// li {
+//   list-style-type: none;
+//   div {
+
+//     display: inline-block;
+//     // width: 91%;
+//     height: 20px;
+//     background-color: green;
+//   }
+// }

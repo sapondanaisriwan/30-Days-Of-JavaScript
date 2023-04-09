@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#countries h2,
+#countries .subtitle {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.group-buttons {
+  display: flex;
+  justify-content: center;
+}
+.group-buttons + p {
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.graph-wrapper .test {
+  display: flex;
+  align-items: center;
+}
+
+.graph-width {
+  height: 40px;
+  background-color: green;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.container > span {
+  padding: 4px;
+  width: 80px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

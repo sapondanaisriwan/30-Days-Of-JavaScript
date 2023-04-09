@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(#e66465, #9198e5);
+  background-size: cover;
+  background-position: center;
+  background-image: url("../images/globe-2.jpg");
+  width: 100%;
+  height: 50vh;
+}
+.header #landing-page {
+  text-align: center;
+}
+.header #landing-page h1,
+.header #landing-page h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.header #search-box {
+  margin-top: 12px;
+}
+.header #search-box input {
+  padding: 0 20px;
+  height: 36px;
+  width: 300px;
+  border-radius: 18px;
+}
+
+main {
+  max-width: 1000px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+main .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+main .container .box {
+  height: 150px;
+  padding: 16px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/map_image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/*# sourceMappingURL=style.css.map */
