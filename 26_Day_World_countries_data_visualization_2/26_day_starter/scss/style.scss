@@ -25,7 +25,13 @@
     }
   }
   #btn-group {
-
+    button {
+      padding: 10px;
+      border-radius: 10px;
+      &[aria-pressed="true"] {
+        background-color: rgb(153, 50, 201);
+      }
+    }
   }
 
   #search-box {
@@ -34,7 +40,7 @@
       padding: 0 20px;
       height: 36px;
       width: 300px;
-      border-radius: 18px;
+      border-radius: 100vh;
     }
   }
 }
@@ -62,6 +68,9 @@ main {
       background-image: url("../images/map_image.jpg");
       background-position: center;
       background-size: cover;
+    }
+    .hidden {
+      display: none;
     }
   }
 }

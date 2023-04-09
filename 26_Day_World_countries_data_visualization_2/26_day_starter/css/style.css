@@ -24,6 +24,13 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.header #btn-group button {
+  padding: 10px;
+  border-radius: 10px;
+}
+.header #btn-group button[aria-pressed=true] {
+  background-color: rgb(153, 50, 201);
+}
 .header #search-box {
   margin-top: 12px;
 }
@@ -31,7 +38,7 @@
   padding: 0 20px;
   height: 36px;
   width: 300px;
-  border-radius: 18px;
+  border-radius: 100vh;
 }
 
 main {
@@ -57,6 +64,9 @@ main .container .box {
   background-image: url("../images/map_image.jpg");
   background-position: center;
   background-size: cover;
+}
+main .container .hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
