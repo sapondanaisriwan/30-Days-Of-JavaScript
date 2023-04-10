@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+main .main {
+  margin-top: 80px;
+}
+main h1 {
+  text-align: center;
+}
+main #input-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0;
+}
+main #input-group input {
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 10px;
+  max-width: 200px;
+  flex-grow: 1;
+}
+main #input-group button {
+  padding: 10px;
+  border-radius: 4px;
+}
+main .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #a2cff5;
+  border-radius: 8px;
+}
+main .container #user-info {
+  max-width: 250px;
+  width: 100%;
+}
+main .container #country {
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+}
+main .container #score {
+  width: 30px;
+  text-align: center;
+}
+main .container #tool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+  padding: 4px;
+}
+main .container #tool button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+main .container #tool button#remove {
+  background-color: red;
+}
+main .container #tool button#add-score {
+  background-color: green;
+}
+main .container #tool button#minus-score {
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

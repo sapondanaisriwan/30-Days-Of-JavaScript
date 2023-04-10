@@ -1,17 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-	<title>30DaysOfJavaScript:11 Day </title>
-</head>
+    <link rel="stylesheet" href="./css/style.css" />
 
-<body>
-	<h1>30DaysOfJavaScript:11 Day</h1>
-	<h2>Destructuring and Spread</h2>
+    <script src="./scripts/main.js" defer></script>
+    <title>30DaysOfJavaScript:11 Day</title>
+  </head>
 
-	<script src="./data/countries_data.js"></script>
-	<script src="./scripts/main.js"></script>
-
-</body>
-
+  <body>
+    <main>
+      <div class="main">
+        <h1>30 Days Of JavaScript Challenge Leader board</h1>
+        <div id="input-group">
+          <form action="" id="form-input">
+            <input
+              type="text"
+              id="first-name"
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              id="last-name"
+              placeholder="Last Name"
+              required
+            />
+            <input type="text" id="country" placeholder="Country" required />
+            <input
+              type="number"
+              id="player-score"
+              placeholder="Player Score"
+              min="0"
+              max="100"
+              required
+            />
+            <button id="add-player" type="submit">Add Player</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <template>
+      <div class="container">
+        <div id="user-info">
+          <h3></h3>
+          <p></p>
+        </div>
+        <div id="country"></div>
+        <div id="score"></div>
+        <div id="tool">
+          <button id="remove">🗑️</button>
+          <button id="add-score">+5</button>
+          <button id="minus-score">-5</button>
+        </div>
+      </div>
+    </template>
+  </body>
 </html>

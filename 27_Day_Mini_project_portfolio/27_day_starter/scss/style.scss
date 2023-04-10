@@ -1,0 +1,52 @@
+// reset default value browser
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  max-width: 1240px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  .main {
+    width: 100%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+
+    + p {
+      margin-top: 20px;
+    }
+
+    display: flex;
+
+    margin-left: 8px;
+    margin-right: 8px;
+    // gap: 4px;
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-basis: calc(100%/3 - 16px - 0.1px);
+
+      color: black;
+      font-size: 30px;
+      background-color: #b0b0ac;
+      height: 200px;
+      padding: 10px;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+}
